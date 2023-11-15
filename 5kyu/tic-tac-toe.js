@@ -37,3 +37,26 @@ function isSolved(board) {
     [[1, 1, 2],
     [1, 2, 2],
     [0, 1, 1]]))
+
+
+function solve(s) {
+    let alphabet=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+    let alphaIndex=alphabet.map((e,i)=>i+1)   
+    let str=s.split('')//
+    let ShortStr=s.replace(/[aeiou]/g,' ').split(' ')
+    let IdArr=str.map((e,i)=>(e==='a'||e==='e'||e==='i'||e==='o'||e==='u'?'-':e)).map((e)=>e===alphabet[alphabet.indexOf(e)]?alphabet.indexOf(e):e)
+    let arrSize=ShortStr.map((e)=>e.length)    
+    let result=[]
+        IdArr.join('').split('-').map((e)=>+e)
+    
+    let Values=IdArr.join('').split('-').map((e)=>+e)
+    let summedArray = Values.map(element => {
+    element.toString().split('').map(Number).reduce((acc, num) => acc + num, 0)
+    });
+    return summedArray
+        
+    }
+    //(e===alphabet[alphabet.indexOf(e)]))?alphabet.indexOf(e):e
+    let str="chruschtschov"
+    console.log(solve(str))
+    
